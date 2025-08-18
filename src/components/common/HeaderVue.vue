@@ -42,10 +42,16 @@
       </div>
     </div>
   </header>
+
+  <MyInfoPopup
+    :open="isPopupOpen"
+    :user="{ name: '김ㅇㅇ', image: '/images/profile.jpg' }"
+    @go-requests="handleRequests"
+    @go-profile="handleProfile"
+  />
 </template>
 <script setup>
 import api from '@/api.js'
-import axios from 'axios'
 
 const categories = [
   { label: '교통/주차', value: 'traffic' },
@@ -55,22 +61,14 @@ const categories = [
 ]
 
 const onClickLogin = () => {
-  //window.open('http://34.22.78.216:31001/', '_self')
-  //   axios
-  //     .get('/api/login')
-  //     .then((res) => {
-  //       console.log(res)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  api
-    .get('/login')
-    .then((res) => {
-      console.log(res)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  window.location.href = 'http://34.22.78.216/api/login'
+  // api
+  //   .get('/login')
+  //   .then((res) => {
+  //     console.log(res)
+  //   })
+  //   .catch((err) => {
+  //     console.log(err)
+  //   })
 }
 </script>

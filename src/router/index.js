@@ -10,9 +10,9 @@ const routes = [
     path: '/minwon/:category?',
     name: 'Minwon',
     component: MinwonList,
-    props: true, // param을 props로 전달 가능
+    props: true,
   },
-  { path: '/submit', name: 'MinwonSubmit', component: MinwonSubmit },
+  { path: '/submit/:category?', name: 'MinwonSubmit', component: MinwonSubmit, props: true },
   { path: '/department', name: 'DepartmentLink', component: DepartmentLink },
   { path: '/chatbot', name: 'ChatBot', component: ChatBot },
 ]

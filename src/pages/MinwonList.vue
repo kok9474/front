@@ -5,7 +5,7 @@
       <div class="flex justify-between items-center mb-2">
         <h2 class="text-blue-600 font-semibold text-lg">텍스트 민원 접수</h2>
         <router-link
-          to="/submit"
+          :to="`/submit/${category}`"
           class="bg-blue-500 text-white px-4 py-1 rounded text-sm hover:bg-blue-600"
           @click="onClickSubmit"
         >
@@ -30,7 +30,7 @@
       <div class="flex justify-between items-center mb-2">
         <h2 class="text-blue-600 font-semibold text-lg">사진 민원 접수</h2>
         <router-link
-          to="/submit"
+          :to="`/submit/${category}`"
           class="bg-blue-500 text-white px-4 py-1 rounded text-sm hover:bg-blue-600"
           @click="onClickSubmit"
         >
@@ -53,22 +53,6 @@
               있습니다.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!--관련 부서 연결-->
-    <section class="mb-12 w-full">
-      <div class="flex justify-between items-center mb-2">
-        <h2 class="text-blue-600 font-semibold text-lg">관련 부서 연결</h2>
-      </div>
-      <div>
-        <div class="bg-white border rounded-lg p-4 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-sm mb-2">가로등 빨리 고쳐주세요</h3>
-          <p class="text-xs text-gray-600">
-            해당 지역 가로등이 꺼져 있어서 야간 보행 시 매우 위험합니다. 조속한 점검 및 수리를
-            요청드립니다.
-          </p>
         </div>
       </div>
     </section>
@@ -106,14 +90,14 @@ const textRaw = computed(() => {
 
 const onClickSubmit = () => {
   console.log('onClickSubmit')
-  api
-    .get('/complaints/list')
-    .then((res) => {
-      console.log(res)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  // api
+  //   .get('/complaints/list')
+  //   .then((res) => {
+  //     console.log(res)
+  //   })
+  //   .catch((err) => {
+  //     console.log(err)
+  //   })
 }
 
 onMounted(async () => {

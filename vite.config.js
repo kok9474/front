@@ -12,14 +12,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  server: {
-    //TODO: 개발용 서버 변경
-    proxy: {
-      '/api': {
-        target: 'http://34.22.78.216',
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
+  // server: {
+  //   //TODO: 개발용 서버 변경
+  //   proxy: {
+  //     '/api': {
+  //       target: 'http://34.22.78.216',
+  //       changeOrigin: true,
+  //       secure: false,
+  //     },
+  //   },
+  // },
 })
